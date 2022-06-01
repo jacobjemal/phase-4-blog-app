@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
     def show
         blog = Blog.find(params[:id])
-        render json: blog, include: :users
+        render json: blog, include: [:user]
     end
 
     def create
