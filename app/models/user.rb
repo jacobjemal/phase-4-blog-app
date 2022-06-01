@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
     def permitted_emails
         unless email.match?(/gmail.com|yahoo.com|icloud.com/)
-            errors.add(:permitted_emails, "Sorry, that email isn't permitted.")
+            errors.add(:permitted_emails, "Sorry, that email isn't permitted. ONLY: gmail.com | yahoo.com | icloud.com")
         end
     end 
 end
