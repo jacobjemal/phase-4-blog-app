@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
+
     def destroy
         user = User.find(params[:id])
         user.destroy
