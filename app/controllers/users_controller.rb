@@ -6,14 +6,14 @@ class UsersController < ApplicationController
     end
 
     def show
-        currnet_user = User.find_by(id: session[:current_user])
+        currnet_user = User.find_by(id: params[:id]) #session[:current_user])
         render json: currnet_user
     end
 
     def create
         user = User.create!(user_params)
-        render json: user, satatus: :created
-    end
+        render json: user, status: :created
+    end 
 
     def update
         user = User.find(params[:id])
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name, :email, :password)
+        params.permit(:username, :email, :password)
     end 
 end

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
     def login
-        user = User.find_by(name:params[:username])
+        user = User.find_by(username: params[:username])
         
         if user&.authenticate(params[:password])
 

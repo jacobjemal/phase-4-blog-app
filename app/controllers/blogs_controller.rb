@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
     end
 
     def update
-        blog = Blog.find(id: params[:id])
+        blog = Blog.find(params[:id])
         blog.update!(blog_params)
         render json: blog, status: :created
     end
