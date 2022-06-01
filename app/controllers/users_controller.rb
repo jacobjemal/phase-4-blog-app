@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        currnet_user = User.find_by(id: params[:id])
+        currnet_user = User.find_by(id: session[:current_user])
         render json: currnet_user
     end
 
