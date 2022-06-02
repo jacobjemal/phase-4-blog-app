@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     def index
         user = User.all
-        render json: user, except: [:blogs, :comments], status: 200
+        render json: user, status: 200
     end
 
     def show

@@ -2,8 +2,8 @@ class BlogsController < ApplicationController
 
 
     def index
-        blog = Blog.all
-        render json: blog, status: 200
+        blogs = Blog.all
+        render json: blogs, status: 200
     end
 
     def show
