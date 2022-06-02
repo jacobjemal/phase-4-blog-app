@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
     def show
         blog = Blog.find(params[:id])
-        render json: blog, include: [:user]
+        render json: blog, status: 200 
     end
 
     def create
@@ -31,7 +31,7 @@ class BlogsController < ApplicationController
     private
 
     def blog_params
-        params.permit(:title, :content)
+        params.permit(:title, :content, :user_id)
     end
 end
 

@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 
     def index
         user = User.all
-        render json: user, status: 200
+        render json: user, except: [:blogs, :comments], status: 200
     end
 
     def show
         currnet_user = User.find_by(id: params[:id]) #session[:current_user])
-        render json: currnet_user
+        render json: currnet_user, serializer: UsersWithStuffSerializer
     end
 
     def create
