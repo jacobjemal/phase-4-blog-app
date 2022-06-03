@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :comments
-    has_many :blogs
+    has_many :comments, dependent: :destroy_async
+    has_many :blogs, dependent: :destroy_async
     
     has_secure_password
     

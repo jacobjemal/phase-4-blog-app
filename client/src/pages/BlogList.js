@@ -35,8 +35,10 @@ function BlogList() {
                 <cite>By {blog.user.username}</cite>
               </p>
             </Box>
-            <Box>
-              <h4>{}</h4>
+            <Box> 
+              <p>
+            <h4>{blog.user.comments}</h4>
+              </p>
             </Box>
           </Blog>
         ))

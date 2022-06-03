@@ -25,7 +25,8 @@ class UsersController < ApplicationController
     def destroy
         user = User.find(params[:id])
         user.destroy
-        head :no_content
+        render json: {}, status: 200
+        # head :no_content
     end
 
     private

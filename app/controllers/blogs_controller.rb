@@ -25,7 +25,8 @@ class BlogsController < ApplicationController
     def destroy
         blog = Blog.find(params[:id])
         blog.destroy
-        head :no_content
+        render json: {}, status: 200
+        # head :no_content
     end
 
     private

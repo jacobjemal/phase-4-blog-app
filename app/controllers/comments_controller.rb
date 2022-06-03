@@ -24,7 +24,8 @@ class CommentsController < ApplicationController
     def destroy
         comment = Comment.find(params[:id])
         comment.destroy
-        head :no_content
+        render json: {}, status: 200
+        # head :no_content
     end
 
     private
