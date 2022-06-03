@@ -7,24 +7,36 @@ import { Box, Button } from "../styles";
 function BlogList() {
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch("/blogs")
-      .then((r) => r.json())
-      .then(setBlogs);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/blogs")
+  //     .then((r) => r.json())
+  //     .then(setBlogs);
+  //   }, []);
+
+  const request = async() => {
+    let req = await fetch('/blogs')
+    let res = await req.json()
+      setBlogs(res)
+  }
+
+  console.log(blogs)
+
+  useEffect(request, [])
 
   return (
     <Wrapper>
       {blogs.length > 0 ? (
         blogs.map((blog) => (
-          <Blog key={blog.id}>
+          <Blog key={blog.id} >
             <Box>
               <h2>{blog.title}</h2>
+              <h3>{blog.content}</h3>
               <p>
-
                 <cite>By {blog.user.username}</cite>
               </p>
-          
+            </Box>
+            <Box>
+              <h4>{}</h4>
             </Box>
           </Blog>
         ))

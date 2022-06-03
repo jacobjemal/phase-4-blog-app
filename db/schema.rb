@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_210049) do
     t.integer "post_id"
     t.text "content"
     t.integer "user_id"
+    t.integer "blog_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

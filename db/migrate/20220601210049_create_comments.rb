@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.integer :post_id
       t.text :content
       t.integer :user_id
+      t.integer :blog_id
 
       t.timestamps
     end
